@@ -14,8 +14,8 @@ def main(speed=0, bg_color="grey"):
   
  
     """TODO: define different colors here"""
-
-
+    colors = [(255,0,0),(0,255,0),(0,0,255),(255,255,0),(255,0,255),(0,255,255),(0,0,0),(255,255,255),(125,255,0),(255,0,125)]
+  
     for _ in range(10):
         # define some params
         size = 18
@@ -27,7 +27,8 @@ def main(speed=0, bg_color="grey"):
         myTurtle.penup()
         myTurtle.goto(pos[0], pos[1])
         myTurtle.pendown()
-
+        turtle_screen.colormode(255)
+        myTurtle.color(colors[_%len(colors)])
         # draw the snowflake
         for _ in range(8):
             snowflake_branch(size, myTurtle)
